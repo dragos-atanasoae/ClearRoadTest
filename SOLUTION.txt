@@ -1,0 +1,4 @@
+For Google Authentication i choose to use Capacitor instead Cordova 
+because the Capacitor is more eficient, stable, and performant way to interact with the native APIs
+
+Many of the Cordova plugins are deprecated, obsolete or unmaintained
