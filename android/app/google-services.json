@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "299959528486",
+    "project_id": "clearroadtest",
+    "storage_bucket": "clearroadtest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:299959528486:android:2a8376a30d0b400f15cae7",
+        "android_client_info": {
+          "package_name": "com.clearroad.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "299959528486-8vlcp9l19dvn4ep2o121998l6adj3osh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.clearroad.test",
+            "certificate_hash": "14984409cea4680d4ff3eb648242a4dccd8b5428"
+          }
+        },
+        {
+          "client_id": "299959528486-vg5set6emlpeba66un5e1dt833o1jhbf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhO79vLuVRj0QgV_I83zkI8H9VwaQlm_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "299959528486-vg5set6emlpeba66un5e1dt833o1jhbf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

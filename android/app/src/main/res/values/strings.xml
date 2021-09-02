@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">ClearRoadTest</string>
+    <string name="title_activity_main">ClearRoadTest</string>
+    <string name="package_name">com.clearroad.test</string>
+    <string name="custom_url_scheme">com.clearroad.test</string>
+    <string name="server_client_id">299959528486-vg5set6emlpeba66un5e1dt833o1jhbf.apps.googleusercontent.com</string>
+</resources>

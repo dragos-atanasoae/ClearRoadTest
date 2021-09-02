@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="container" *ngIf="userDetails">
+    <ion-avatar>
+      <img [src]="userDetails.imageUrl" />
+    </ion-avatar>
+    <strong>{{userDetails.displayName}}</strong>
+    <p>{{userDetails.email}}</p>
+  </div>
+  <ion-button (click)="signOut()" expand="block" fill="clear" shape="round">
+    Sign out
+  </ion-button>
+</ion-content>
