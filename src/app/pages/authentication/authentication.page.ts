@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Platform, ToastController } from '@ionic/angular';
-import { GoogleAuth } from '@codetrix-studio/capacitor-google-auth';
+import { ToastController } from '@ionic/angular';
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
 
 @Component({
   selector: 'app-authentication',
@@ -14,16 +14,12 @@ export class AuthenticationPage implements OnInit {
   emailForm = new FormControl('', [Validators.required, Validators.email]);
 
   constructor(
-    private platform: Platform,
+    private googlePlus: GooglePlus,
     private router: Router,
     private toastCtrl: ToastController
   ) { }
 
-  ngOnInit() {
-    if (this.platform.is('desktop')) {
-      GoogleAuth.init();
-    }
-  }
+  ngOnInit() {}
 
   signIn() {
     console.log(this.emailForm.value);
@@ -35,12 +31,15 @@ export class AuthenticationPage implements OnInit {
   }
 
   async signInWithGoogle() {
-    const googleUser = await GoogleAuth.signIn();
-    console.log(googleUser);
-    if (googleUser.authentication) {
-      localStorage.setItem('userDetails', JSON.stringify(googleUser));
-      this.router.navigateByUrl('home');
-    }
+    this.googlePlus.login({})
+      .then(res => {
+        console.log(res);
+        if (res) {
+            localStorage.setItem('userDetails', JSON.stringify(res));
+            this.router.navigateByUrl('home');
+          }
+      })
+      .catch(err => console.error(err));
   }
 
   async presentToastMessage(message: string, color: string) {
