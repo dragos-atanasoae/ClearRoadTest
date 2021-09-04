@@ -28,3 +28,42 @@ ion-button {
   width: 80%;
   margin: 4rem auto 0 auto;
 }
+
+ion-card {
+  padding: 0.5rem;
+  max-width: 420px;
+  margin: 0.5rem auto;
+  .title {
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  .label_subtitle {
+    margin: 0.2rem 0.5rem;
+    font-weight: 500;
+  }
+  #table_header {
+    margin-top: 1rem;
+    border-bottom: 1px solid #c7c7c7;
+    p {
+      text-align: center;
+    }
+  }
+  .table_row {
+    ion-col {
+      padding: 0.1rem;
+      border-bottom: 0.5px solid #c7c7c7;
+      .label_data {
+        margin: 0.25rem;
+        text-align: center;
+        font-weight: 500;
+      }
+    }
+  }
+  .active_selection {
+    color: var(--ion-color-primary);
+  }
+  ion-button {
+    margin-top: 1rem;
+  }
+}

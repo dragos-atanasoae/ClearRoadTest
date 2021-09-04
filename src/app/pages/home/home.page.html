@@ -17,4 +17,43 @@
   <ion-button (click)="signOut()" expand="block" fill="clear" shape="round">
     Sign out
   </ion-button>
+
+  <div>
+    <ion-card *ngFor="let case of listOfCases">
+      <p class="title" [class]="selectedCase?.id === case.id ? 'active_selection' : ''">Case {{case.id}}</p>
+      <p class="label_subtitle">Budget {{case.c}}</p>
+      <p class="label_subtitle">Restructuring days {{case.d}}</p>
+      <p class="label_subtitle">Machines {{case.n}}</p>
+      <ion-row id="table_header">
+        <ion-col size="3"><p>Day of availability</p></ion-col>
+        <ion-col size="3"><p>Price</p></ion-col>
+        <ion-col size="3"><p>Resale price</p></ion-col>
+        <ion-col size="3"><p>Profit ($/day)</p></ion-col>
+      </ion-row>
+      <ion-row class="table_row" *ngFor="let machine of case.machines">
+        <ion-col size="3">
+          <p class="label_data">{{machine.di}}</p>
+        </ion-col>
+        <ion-col size="3">
+          <p class="label_data">{{machine.pi}}</p>
+        </ion-col>
+        <ion-col size="3">
+          <p class="label_data">{{machine.ri}}</p>
+        </ion-col>
+        <ion-col size="3">
+          <p class="label_data">{{machine.gi}}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="case.machines.length < 1">
+        <ion-col size="12">
+          <p class="label_data">No machine available</p>
+        </ion-col>
+      </ion-row>
+      <h3 *ngIf="selectedCase?.id === case.id && totalProfit">Max profit: <span>{{totalProfit}}</span></h3>
+      <ion-button (click)="selectCase(case.id)" expand="block" fill="clear" shape="round">
+        Find max profit
+      </ion-button>
+    </ion-card>
+  </div>
+
 </ion-content>
